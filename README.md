@@ -24,9 +24,14 @@ Il sistema è stato sperimentato e validato su tre dataset:
 
 Durante la sperimentazione sono stati testati diversi valori per:
 
-- **Numero di documenti retrievati** per query
+- top_k = **Numero di documenti retrievati** per query
+- **Numero di domande** = qa_pairs
+- max_knowledge = **il numero di documenti**
 - **Numero di livelli** di cache (da 1 a 3)
-- **Capacità di ciascun livello** L1, L2, L3 (250 per L1; 500 per L2; 1000 per L3) / (25 per L1; 50 per L2; 100 per L3) / (25 per L1)
+- **Capacità di ciascun livello** L1, L2, L3:
+- - Configurazione large della cache (250 per L1; 500 per L2; 1000 per L3)
+  - Configurazione ridotta (25 per L1; 50 per L2; 100 per L3)
+  - Cache monoivello (25 per L1)
 
 ---
 
@@ -54,9 +59,18 @@ Durante la sperimentazione sono stati testati diversi valori per:
 
 ---
 
+## Esecuzione
+
+1. Scegliere il notebook da sperimentare e aprirlo con Google Colab (consigliato se non vuoi configurare l'ambiente localmente)
+2. Impostare gli iperparametri
+3. Eseguire tutte le celle in ordine
+
+---
+
 ## Requisiti
 
 Per eseguire il notebook, assicurati di avere installato:
 
 ```bash
 pip install faiss-cpu sentence-transformers scikit-learn transformers
+
